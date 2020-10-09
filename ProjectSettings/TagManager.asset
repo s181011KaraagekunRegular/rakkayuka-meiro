@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FallCube
+  - "Player\uFF12"
   layers:
   - Default
   - TransparentFX
