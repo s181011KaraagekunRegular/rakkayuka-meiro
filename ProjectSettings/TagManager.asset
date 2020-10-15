@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FallCube
   - "Player\uFF12"
   layers:
   - Default
@@ -16,7 +15,7 @@ TagManager:
   - 
   - 
   - Player
-  - FallCube
+  - 
   - 
   - 
   - 
