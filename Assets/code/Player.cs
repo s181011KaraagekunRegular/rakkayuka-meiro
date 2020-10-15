@@ -48,5 +48,4 @@ public class Player : MonoBehaviour
             this.gameObject.transform.position = new Vector3(pos.x + 0.2f, pos.y, pos.z);
         }
     }
-
 }
