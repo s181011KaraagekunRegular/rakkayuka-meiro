@@ -49,4 +49,23 @@ public class Player : MonoBehaviour
         }
     }
 
+
+
+public class MyScript : MonoBehaviour
+    {
+        void Update()
+        {
+
+
+
+            void OnCollisionStay(Collision collision)
+            {
+                Debug.Log("当たり判定");
+
+            }
+        }
+    }
 }
+
+
+

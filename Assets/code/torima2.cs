@@ -7,52 +7,52 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
 
+        基本形
 
-        //基本形
-
-        //Mathf.Clampは値を制限内に収める関数である
+        Mathf.Clampは値を制限内に収める関数である
         Mathf.Clamp(対象の値, 最小値, 最大値);
 
 
-        //最小値を返す方法
+        最小値を返す方法
 
         int 対象の値 = 3;
         int 最小値 = 10;
         int 最大値 = 20;
 
-        //対象の値(3)が最小値(10)より低いため("3"～10～20)
-        //最小値(10)を返す
+        対象の値(3)が最小値(10)より低いため("3"～10～20)
+        最小値(10)を返す
         int 結果(10) = Mathf.Clamp(対象の値, 最小値, 最大値);
 
 
-        //最大値を返す方法
+        最大値を返す方法
 
         int 対象の値 = 50;
         int 最小値 = 10;
         int 最大値 = 20;
 
-        //対象の値(50)が最大値(20)より大きいため(10～20～"50")
-        //最大値(20)を返す
+        対象の値(50)が最大値(20)より大きいため(10～20～"50")
+        最大値(20)を返す
         int 結果(20) = Mathf.Clamp(対象の値, 最小値, 最大値);
 
 
-        //何もしないとき
+        何もしないとき
 
         int 対象の値 = 16;
         int 最小値 = 10;
         int 最大値 = 20;
 
-        //対象の値(16)は最小値と最大値の間にあるので(10～"16"～20)
-        //そのまま16を返す
+        対象の値(16)は最小値と最大値の間にあるので(10～"16"～20)
+        そのまま16を返す
         int 結果(16) = Mathf.Clamp(対象の値, 最小値, 最大値);
 
 
-        //三次元のベクトルを用いた制限方法
+        三次元のベクトルを用いた制限方法
 
         public void RestrictedMove(Vector3 Position, Vector3 Vec3Min, Vector3 Vec3Max, Space Type)
         {
-            //座標と移動を加算した値
+            座標と移動を加算した値
             Vector3 Result = transform.localPosition + Position;
 
             if (IsRange(Result.x, Vec3Min.x, Vec3Max.x) == true)
@@ -69,15 +69,16 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 transform.Translate(0, 0, Position.z, Type);
             }
-        }
+        }*/
 
     }
 }
 
 //自分用テンプレート
 
-using UnityEngine;
-using System.Collections;
+
+//using UnityEngine;
+//using System.Collections;
 
 public class RangeLimiterTranslate : MonoBehaviour
 {
