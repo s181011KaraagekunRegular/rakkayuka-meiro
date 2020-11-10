@@ -134,8 +134,7 @@ GameObject:
   - component: {fileID: 41406089}
   - component: {fileID: 41406088}
   - component: {fileID: 41406093}
-  - component: {fileID: 41406092}
-  - component: {fileID: 41406095}
+  - component: {fileID: 41406094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -217,18 +216,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41406092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41406087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdca9be4cbd733a438d166ff8b74722e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &41406093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -245,7 +232,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &41406095
+--- !u!114 &41406094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,13 +241,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 41406087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80260d452ad644f48a8cca091318eac6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dab691d94b97ea4da1c2b2716ea07f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 5
-  charaRay: {fileID: 0}
-  charaRayRange: 0.2
-  walkSpeed: 1.5
+  moveSpeed: 0.2
 --- !u!1 &71773731
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +257,8 @@ GameObject:
   - component: {fileID: 71773736}
   - component: {fileID: 71773735}
   - component: {fileID: 71773734}
-  - component: {fileID: 71773733}
   - component: {fileID: 71773732}
+  - component: {fileID: 71773733}
   m_Layer: 0
   m_Name: FallCube (2)
   m_TagString: Untagged
@@ -489,8 +473,8 @@ GameObject:
   - component: {fileID: 110071696}
   - component: {fileID: 110071695}
   - component: {fileID: 110071694}
-  - component: {fileID: 110071693}
   - component: {fileID: 110071692}
+  - component: {fileID: 110071693}
   m_Layer: 0
   m_Name: FallCube (6)
   m_TagString: Untagged
@@ -737,6 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469686572}
   - component: {fileID: 469686573}
+  - component: {fileID: 469686574}
   m_Layer: 0
   m_Name: FallCubes
   m_TagString: Untagged
@@ -781,6 +766,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakValue: 0.1
+--- !u!114 &469686574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469686571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256a778a13fbc654e85d4740a515a346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &510845859
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,8 +790,8 @@ GameObject:
   - component: {fileID: 510845864}
   - component: {fileID: 510845863}
   - component: {fileID: 510845862}
-  - component: {fileID: 510845861}
   - component: {fileID: 510845860}
+  - component: {fileID: 510845861}
   m_Layer: 0
   m_Name: FallCube 2
   m_TagString: Untagged
@@ -1426,13 +1423,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.5585522, y: -0, z: -0, w: 0.8294694}
-  m_LocalPosition: {x: 0, y: 17.31, z: -4.18}
+  m_LocalRotation: {x: 0.07056925, y: 0.72664344, z: -0.06312281, w: 0.6804592}
+  m_LocalPosition: {x: -23.05, y: 15.29, z: 3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 67.911, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.823001, y: 93.852005, z: 0.9710001}
 --- !u!1 &1051377553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,8 +1442,8 @@ GameObject:
   - component: {fileID: 1051377559}
   - component: {fileID: 1051377558}
   - component: {fileID: 1051377557}
-  - component: {fileID: 1051377556}
   - component: {fileID: 1051377555}
+  - component: {fileID: 1051377556}
   m_Layer: 0
   m_Name: FallCube (8)
   m_TagString: Untagged
@@ -1568,8 +1565,8 @@ GameObject:
   - component: {fileID: 1086918115}
   - component: {fileID: 1086918114}
   - component: {fileID: 1086918113}
-  - component: {fileID: 1086918112}
   - component: {fileID: 1086918111}
+  - component: {fileID: 1086918112}
   m_Layer: 0
   m_Name: FallCube (7)
   m_TagString: Untagged
@@ -1691,8 +1688,8 @@ GameObject:
   - component: {fileID: 1316028353}
   - component: {fileID: 1316028352}
   - component: {fileID: 1316028351}
-  - component: {fileID: 1316028350}
   - component: {fileID: 1316028349}
+  - component: {fileID: 1316028350}
   m_Layer: 0
   m_Name: FallCube (3)
   m_TagString: Untagged
@@ -1941,8 +1938,8 @@ GameObject:
   - component: {fileID: 1524559132}
   - component: {fileID: 1524559131}
   - component: {fileID: 1524559130}
-  - component: {fileID: 1524559129}
   - component: {fileID: 1524559128}
+  - component: {fileID: 1524559129}
   m_Layer: 0
   m_Name: FallCube (1)
   m_TagString: Untagged
@@ -2066,7 +2063,7 @@ GameObject:
   - component: {fileID: 1759273066}
   m_Layer: 0
   m_Name: Cube start
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2131,20 +2128,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759273065}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1759273069
-Transform:
+--- !u!224 &1759273069
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759273065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1774346671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,8 +2159,8 @@ GameObject:
   - component: {fileID: 1774346677}
   - component: {fileID: 1774346676}
   - component: {fileID: 1774346675}
-  - component: {fileID: 1774346674}
   - component: {fileID: 1774346673}
+  - component: {fileID: 1774346674}
   m_Layer: 0
   m_Name: FallCube (5)
   m_TagString: Untagged
@@ -2467,8 +2469,8 @@ GameObject:
   - component: {fileID: 1831210927}
   - component: {fileID: 1831210926}
   - component: {fileID: 1831210925}
-  - component: {fileID: 1831210924}
   - component: {fileID: 1831210923}
+  - component: {fileID: 1831210924}
   m_Layer: 0
   m_Name: FallCube 2 (1)
   m_TagString: Untagged
@@ -2735,8 +2737,8 @@ GameObject:
   - component: {fileID: 2022709256}
   - component: {fileID: 2022709255}
   - component: {fileID: 2022709254}
-  - component: {fileID: 2022709253}
   - component: {fileID: 2022709252}
+  - component: {fileID: 2022709253}
   m_Layer: 0
   m_Name: FallCube (4)
   m_TagString: Untagged
@@ -2951,8 +2953,9 @@ GameObject:
   - component: {fileID: 2052463069}
   - component: {fileID: 2052463068}
   - component: {fileID: 2052463067}
-  - component: {fileID: 2052463071}
   - component: {fileID: 2052463072}
+  - component: {fileID: 2052463071}
+  - component: {fileID: 2052463073}
   m_Layer: 0
   m_Name: FallCube
   m_TagString: Untagged
@@ -3062,3 +3065,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2052463073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052463066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a308d2284962e6f4faa26520a017c904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakValue: 0.1
