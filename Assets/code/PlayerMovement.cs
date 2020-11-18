@@ -15,7 +15,7 @@ namespace Assets.code
         private const float V = 1.1f;
         public float moveSpeed = .5f;
 
-        void Start() => this.gameObject.transform.position = new Vector3(0, 0, 0);
+        void Start() => this.gameObject.transform.position = new Vector3(5, 1, 1);
         // playerの位置を特定
         private Vector3 pos;
 
@@ -64,8 +64,8 @@ namespace Assets.code
               y値　+：上部への可動域,-：下部への可動域
             　z値　+：,　　　　　　　　-：
             */
-            pos.x = Mathf.Clamp(pos.x, -2f, 0);
-            pos.z = Mathf.Clamp(pos.z, 0, 0);
+            pos.x = Mathf.Clamp(pos.x, 5, -5);
+            pos.y = Mathf.Clamp(pos.y, 0, 0);
             pos.z = Mathf.Clamp(pos.z, 0, 0);
             transform.position = pos;
 
