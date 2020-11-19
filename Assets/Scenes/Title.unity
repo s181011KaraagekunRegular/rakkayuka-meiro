@@ -133,7 +133,8 @@ GameObject:
   - component: {fileID: 698655589}
   - component: {fileID: 698655588}
   - component: {fileID: 698655587}
-  m_Layer: 5
+  - component: {fileID: 698655590}
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +203,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 698655588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698655590}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &698655588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +252,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698655585}
   m_CullTransparentMesh: 0
+--- !u!114 &698655590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698655585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef285a9b3750e894dae8a02b2bf70832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &752197195
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +367,7 @@ GameObject:
   - component: {fileID: 771721644}
   - component: {fileID: 771721646}
   - component: {fileID: 771721645}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,9 +529,9 @@ GameObject:
   - component: {fileID: 1432805696}
   - component: {fileID: 1432805695}
   - component: {fileID: 1432805694}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -671,7 +695,7 @@ GameObject:
   - component: {fileID: 1725509390}
   - component: {fileID: 1725509392}
   - component: {fileID: 1725509391}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +852,7 @@ GameObject:
   - component: {fileID: 1873231766}
   - component: {fileID: 1873231765}
   - component: {fileID: 1873231764}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
