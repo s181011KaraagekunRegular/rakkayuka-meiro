@@ -8,7 +8,7 @@ public class TransStage0 : MonoBehaviour
     public void OnClick()
     {
         // メインシーンへ移動
-        SceneManager.LoadScene("stage0");
+        SceneManager.LoadScene("Stage0");
     }
     void Start()
     {
