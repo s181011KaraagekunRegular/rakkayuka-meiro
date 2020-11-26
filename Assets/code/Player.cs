@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
         //現在の位置を取得
         Vector3 pos = this.gameObject.transform.position;
 
-        //↑↓←→キー　各移動速度を設定
+        //Upside, Downside, Leftside, rightsideキー　各移動速度を設定
         const float V = 0.15f;
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -33,25 +33,6 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             this.gameObject.transform.position = new Vector3(pos.x + V, pos.y, pos.z);
-        }
-
-        //WASDキー　各移動速度を設定
-        const float V1 = 0.2f;
-        if (Input.GetKey(KeyCode.W))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + V1);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z - V1);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x - V1, pos.y, pos.z);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x + V1, pos.y, pos.z);
         }
     }
 
