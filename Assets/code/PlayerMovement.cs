@@ -12,7 +12,7 @@ namespace Assets.code
         const V：一回当たりの移動量を設定
         moveSpeed：移動速度の設定…速すぎると判定抜けの可能性あり
          */
-        private const float V = 1.1f;
+        private const float V =  .5f;
         public float moveSpeed = .5f;
 
         void Start() => this.gameObject.transform.position = new Vector3(5, 1, 1);
@@ -33,7 +33,7 @@ namespace Assets.code
             //現在の座標を取得
             //            Vector3 pos = this.gameObject.transform.position;
 
-            Vector3 pos = new Vector3(0, 0, 0);
+            Vector3 pos = new Vector3(1, 0, 0);
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -64,9 +64,9 @@ namespace Assets.code
               y値　+：上部への可動域,-：下部への可動域
             　z値　+：,　　　　　　　　-：
             */
-            pos.x = Mathf.Clamp(pos.x, 5, -5);
-            pos.y = Mathf.Clamp(pos.y, 0, 0);
-            pos.z = Mathf.Clamp(pos.z, 0, 0);
+            pos.x = Mathf.Clamp(pos.x, 2, -1);
+            pos.y = Mathf.Clamp(pos.y, 1, -1);
+            pos.z = Mathf.Clamp(pos.z, 1, -1);
             transform.position = pos;
 
 

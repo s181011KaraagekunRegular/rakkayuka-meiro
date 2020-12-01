@@ -4,57 +4,101 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //初期地点の設定
-    void Start()
-    {
-        this.gameObject.transform.position = new Vector3(0, 1, 0);
-}
 
-    // Update is called once per frame
+    //Rigidbodyを変数に入れる
+    Rigidbody rb;
+    //移動スピード
+    float speed = 3.0f;
+    //ジャンプ力
+    float jumpForce = 400.0f;
+    //ユニティちゃんの位置を入れる
+    Vector3 playerPos;
+    //地面に接触しているか否か
+    bool Ground = true;
+    int key = 0;
+
+    void Start()
+    {
+        //Rigidbodyを取得
+        rb = GetComponent<Rigidbody>();
+        //ユニティちゃんの現在より少し前の位置を保存
+        playerPos = transform.position;
+    }
+
     void Update()
     {
-        //現在の位置を取得
-        Vector3 pos = this.gameObject.transform.position;
-
-        //Upside, Downside, Leftside, rightsideキー　各移動速度を設定
-        const float V = 0.15f;
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + V);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z - V);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x - V, pos.y, pos.z);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            this.gameObject.transform.position = new Vector3(pos.x + V, pos.y, pos.z);
-        }
+        GetInputKey();
+        Move();
     }
 
 
-
-public class MyScript : MonoBehaviour
+    void GetInputKey()
     {
-        void Update()
+        //A・Dキー、←→キーで横移動
+        float x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
+
+        //W・Sキー、↑↓キーで前後移動
+        float z = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.RightArrow))
         {
+            key = 1;
+        }
 
-            /*よくわからないやつ
-             *特定の判定を得たときに表示させる
-             *今は機能してない
-             */
-            void OnCollisionStay(Collision collision)
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            key = -1;
+        }
+
+
+    }
+
+
+    void Move()
+    {
+        if (Ground)
+        {
+            if (Input.GetButton("Jump"))
             {
-                Debug.Log("当たり判定");
-
+                //jumpForceの分だけ上方に力がかかる
+                rb.AddForce(transform.up * jumpForce);
+                Ground = false;
             }
+
+        }
+
+        //現在の位置＋入力した数値の場所に移動する
+        rb.MovePosition(transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime * speed));
+
+        //ユニティちゃんの最新の位置から少し前の位置を引いて方向を割り出す
+        Vector3 direction = transform.position - playerPos;
+
+        //移動距離が少しでもあった場合に方向転換
+        if (direction.magnitude >= 0.01f)
+        {
+            //directionのX軸とZ軸の方向を向かせる
+            transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        }
+        else
+        {
+            key = 0;
+        }
+
+        //ユニティちゃんの位置を更新する
+        playerPos = transform.position;
+
+    }
+
+    //ジャンプ後、Planeに接触した時に接触判定をtrueに戻す
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            if (!Ground)
+                Ground = true;
         }
     }
+
+
+
 }
-
-
-
