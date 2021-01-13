@@ -11,16 +11,24 @@ public class Player : MonoBehaviour
     float speed = 3.0f;
     //ジャンプ力
     float jumpForce = 400.0f;
+    //Animatorを入れる変数
+    private Animator animator;
     //ユニティちゃんの位置を入れる
     Vector3 playerPos;
     //地面に接触しているか否か
     bool Ground = true;
     int key = 0;
 
+    string state;
+    string prevState;
+
+
     void Start()
     {
         //Rigidbodyを取得
         rb = GetComponent<Rigidbody>();
+        //ユニティちゃんのAnimatorにアクセスする
+        animator = GetComponent<Animator>();
         //ユニティちゃんの現在より少し前の位置を保存
         playerPos = transform.position;
     }
@@ -28,6 +36,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         GetInputKey();
+        ChangeState();
+        ChangeAnimation();
         Move();
     }
 
@@ -53,6 +63,50 @@ public class Player : MonoBehaviour
 
     }
 
+    void ChangeState()
+    {
+        if (Ground)
+        {
+            if (key != 0)
+            {
+                state = "RUN";
+            }
+            else
+            {
+                state = "IDLE";
+            }
+        }
+        else
+        {
+            state = "JUMP";
+        }
+    }
+
+    void ChangeAnimation()
+    {
+        if (prevState != state)
+        {
+            switch (state)
+            {
+                case "JUMP":
+                    animator.SetBool("Jumping", true);
+                    animator.SetBool("Running", false);
+                    animator.SetBool("Idle", false);
+                    break;
+                case "RUN":
+                    animator.SetBool("Jumping", false);
+                    animator.SetBool("Running", true);
+                    animator.SetBool("Idle", false);
+                    break;
+                default:
+                    animator.SetBool("Jumping", false);
+                    animator.SetBool("Running", false);
+                    animator.SetBool("Idle", true);
+                    break;
+            }
+            prevState = state;
+        }
+    }
 
     void Move()
     {
